@@ -20,9 +20,9 @@ const productSchema = new mongoose.Schema({
         type : Number,
         default : 0,
     },
-    //todo  now i want our each product should belong to a category
+    //todo // now i want our each product should belong to a category
     category : {
-        type : mongoose.Schema.Types.ObjectI,
+        type : mongoose.Schema.Types.ObjectId,
         ref : "Category",
         required : true, 
     },
