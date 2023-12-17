@@ -1,7 +1,5 @@
 const amqp = require("amqplib");
-
 connect();
-
 // first abstraction
 async function connect(){
     try{
@@ -25,3 +23,4 @@ async function connect(){
         console.log(err);
     }
 }
+
