@@ -65,7 +65,7 @@ userSchema.methods.isPasswordCorrect = async function(password){
 }
 
 userSchema.methods.generateAccessToken = function(){
-    Jwt.sign(
+    jwt.sign(
         {
             _id: this._id,
             email: this.email,
@@ -86,7 +86,7 @@ userSchema.methods.generateAccessToken = function(){
 // but this is similar to access token ?
 //refresh token have less information [because it get refreshed more frequently so we just put id here]
 userSchema.methods.generateAccessToken = function(){
-    Jwt.sign(
+    jwt.sign(
         {
             _id: this._id,
         },
@@ -101,3 +101,5 @@ userSchema.methods.generateAccessToken = function(){
 userSchema.methods.generateRefreshToken = function(){}
 
 export const User = mongoose.model("User", userSchema);
+
+
