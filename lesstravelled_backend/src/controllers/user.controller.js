@@ -31,7 +31,7 @@ const registerUser = asyncHandler( async (req, res) => {
     }
     // User can directly interact with db as it is from mongoose
     // User.findOne({email}) //or using opearators for more
-    const existedUser = User.findOne({
+    const existedUser = await User.findOne({
         $or: [{ userName }, { email }]
     })
     if (existedUser) {
@@ -65,7 +65,7 @@ const registerUser = asyncHandler( async (req, res) => {
         userName: userName.toLowerCase()
     })
 
-    const createdUser = User.findById(user._id).select(
+    const createdUser = await User.findById(user._id).select(
         "-password -refreshToken"
     ); // this tells whether user was created or not
     // but this is an extra db call
