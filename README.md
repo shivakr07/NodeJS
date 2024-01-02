@@ -1,1 +1,1 @@
-// i push here about tools and concepts of nodes and about backend
+// i push here about tools and concepts of and about node
